@@ -1,0 +1,12 @@
+.TopNavBar {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 14px 0px #0000003d;
+    padding: 0 5%;
+}
+
+.TopNavBar__rightPanel {
+    display: flex;
+    align-items: center;
+}

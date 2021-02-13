@@ -1,0 +1,13 @@
+{
+    "emmet.preferences": {
+        
+    
+    },
+    "emmet.excludeLanguages": ["markdown"],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "jade"
+    }
+}
