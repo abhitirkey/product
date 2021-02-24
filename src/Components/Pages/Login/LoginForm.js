@@ -18,7 +18,27 @@ import { FormHelperText } from '@material-ui/core'
 
 import {useSpring, animated} from 'react-spring' // For animation of components
 
+import {auth, provider} from 'Configs/Firebase'
+
+
+import {actionTypes} from 'Context/reducer'
+import {useStateValue} from 'Context/StateProvider'
+
 function LoginForm(props) {
+
+    const [state, dispatch] = useStateValue();
+
+    const signIn = () => {
+        auth.signInWithPopup(provider)
+        .then((result) => {
+            console.log(result);
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user
+            })
+        })
+        .catch((error) => alert(error.message));
+    }
 
     const springProps = useSpring({opacity: 1, from: {opacity: 0}});
 
@@ -92,6 +112,7 @@ function LoginForm(props) {
                                     root: 'flex_item themeButton',
                                     label: 'whiteText'
                                 }}
+                        onClick={signIn}
                     >Login</Button>
                     {/* <button type="submit" className="themeButton fullWidth">Login</button> */}
             </animated.form>

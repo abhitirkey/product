@@ -6,6 +6,8 @@
     --defaultFontColor: #7E7E7E;
     --FontColorLight: rgb(175, 175, 175);
     --gradientBackground: linear-gradient(90deg, #AB205B 0%, #E11F2F 100%);
+    --lightGray: rgb(209, 209, 209);
+    --buttonLight: rgb(240, 240, 240);
 }
 
 * {
@@ -16,6 +18,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     /* color: var(--defaultFontColor); */
+    z-index: 1;
 }
 
 .hide {
@@ -25,7 +28,6 @@
 /* page styling */
 
 .pageContainer {
-    padding: 0 5%;
     padding-top: 5rem;
 }
 
@@ -54,6 +56,14 @@
     opacity: 0.9;
 }
 
+.transparentButton {
+    background-color: transparent;
+    border: none;
+}
+
+.transparentButton:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+}
 /* button styling ends here */
 
 /* Link styling starts here */
@@ -80,6 +90,10 @@ a:hover {
 
 .smallText {
     font-size:0.8rem;
+}
+
+.largeText {
+    font-size: 2rem;
 }
 
 .center {
@@ -121,4 +135,58 @@ a:hover {
 
 .flex_spacer {
     flex: 1;
+}
+
+.spaceTop {
+    margin-top: 1rem;
+}
+
+.spaceBottom {
+    margin-bottom: 1rem;
+}
+
+.spaceLeft {
+    margin-left: 1rem;
+}
+
+.spaceRight {
+    margin-right: 1rem;
+}
+
+/* Mobile and Desktop general classes */
+
+.desktopOnly {
+    display: none;
+}
+
+.desktopOnly__flex {
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+
+    .desktopOnly {
+        display: block;
+    }
+
+    .desktopOnly__flex {
+        display: flex;
+    }
+
+    .desktopOnly__grid {
+        display: grid;
+    }
+
+    .mobileOnly {
+        display: none;
+    }
+
+    .mobileOnly__flex {
+        display: none;
+    }
+
+    .pageContainer {
+        padding: 0 5%;
+        padding-top: 8rem;
+    }
 }

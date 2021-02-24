@@ -1,0 +1,278 @@
+/* Profile section starts here */
+
+.Homepage__ProfileSidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.Homepage__ProfileSidebar > img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60%;
+    margin: 1rem;
+}
+
+.Homepage__ProfileSidebar > .FullName {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 0.5rem;
+}
+
+.Homepage__ProfileSidebar > .Role_Department, .Institute {
+    font-size: 0.7rem;
+}
+
+.Homepage__ProfileSidebar > .statsContainer {
+    display: flex;
+    justify-content: space-around;   
+    border-top: 1px solid gray;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.Homepage__ProfileSidebar .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Profile Section ends here */
+
+/* Posts section - write a Post starts here */
+
+.postsColumn > .writePost {
+    padding: 0.5rem;
+}
+
+.postsColumn > .writePost > .MuiButtonBase-root {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: transform 100ms ease-out;
+    -webkit-transition: transform 100ms ease-out;
+    -moz-transition: transform 100ms ease-out;
+    -ms-transition: transform 100ms ease-out;
+    -o-transition: transform 100ms ease-out;
+}
+
+.postsColumn > .writePost > .MuiButtonBase-root:hover {
+   color: rgba(0, 0, 0, 0.664);
+   transform: scale(1.01);
+   -webkit-transform: scale(1.01);
+   -moz-transform: scale(1.01);
+   -ms-transform: scale(1.01);
+   -o-transform: scale(1.01);
+}
+
+.postsColumn .writePost__attachmentsGroup {
+    display: flex;
+    justify-content: space-around;
+} 
+
+.postsColumn .writePost__attachmentsGroup > .MuiButton-root {
+    text-transform: none;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.705);
+} 
+
+.postsColumn .writePost__attachmentsGroup > .MuiButton-root:hover {
+    background-color:  rgba(0, 0, 0, 0.034);
+    color: rgba(0, 0, 0, 0.808);
+} 
+
+/* Posts section - write a Post ends here */
+
+/* Posts section - all posts starts here */
+
+.PostsSection {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.PostsSection__post {
+    background-color: white;
+    box-shadow: 0 1px 7px 2px #00000033;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 768px){
+    .PostsSection__post {
+        box-shadow: 2px 2px 7px 2px #00000033;
+        border-radius: 5px;
+    }
+}
+
+.PostsSection__post > .post__topSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.PostsSection__post > .post__topSection > img {
+    width: 65px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-right: 10px;
+}
+
+.PostsSection__post .post__personalDetails > p{
+    margin-bottom: 0;
+}
+
+.PostsSection__post .post__personalDetails > .fullname{
+    font-weight: bolder;
+}
+
+
+.PostsSection__post .post__personalDetails > .role_and_department, .time_ago{
+    font-size: 0.8rem;
+}
+
+.PostsSection__post .post__body {
+    padding: 1rem;
+}
+
+.PostsSection__post .post__stats {
+    padding: 1rem 0 0 1rem;
+}
+
+.PostsSection__post .post__image {
+    width: 100%;
+}
+
+.PostsSection__post .post__stats > .likes, .comments{
+    margin: 0 0.5rem;
+}
+
+.PostsSection__post .post__stats > .likes:hover, .comments:hover{
+    cursor: pointer;
+   text-decoration: underline;
+}
+
+.PostsSection__post .like__comment {
+    display:flex;
+    justify-content: space-around;
+}
+
+.PostsSection__post .like__comment > button {
+    width: 50%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 1rem 0;
+}
+
+.PostsSection__post .like__comment > button:hover {
+    background-color: rgba(128, 128, 128, 0.158);
+}
+
+.PostsSection .like__comment .MuiIconButton-label {
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+    font-size: 1rem;
+}
+
+/* Write Post Mobile Panel styling goes here */
+
+.WritePost__MobilePanel {
+    position: absolute;
+    top: 5rem;
+    height: 79%;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 1px 20px 10px 0px #00000033;
+}
+
+.WPMP__TopRow {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lightGray);
+    height: 4rem;
+}
+
+/* Write Post Desktop Panel styling goes here */
+
+.WritePost__DesktopPanel {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 14px 11px 11px 2px #00000036;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* Write Post Form styling goes here */
+
+.WPForm__ProfileRow {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lightGray);
+    height: 5rem;
+}
+
+.WPForm__ProfileRow > * {
+    margin: 0.5rem;
+}
+
+.WPForm__ProfileRow > .name_and_visibility {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.WPForm__ProfileRow > .name_and_visibility > button {
+    padding: 2px;
+    text-transform: none;
+}
+
+.WPForm__TextField {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 12rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--lightGray);
+}
+
+.WPForm__attachmentsGroup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--lightGray);
+    height: 4rem;
+}
+
+.WPForm__postButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+}
+
+.WPForm__postButtonContainer > button {
+    width: 90%;
+    text-transform: none;
+    font-size: 1rem;
+}

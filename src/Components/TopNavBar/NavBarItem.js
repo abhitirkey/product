@@ -3,12 +3,15 @@ import './TopNavBar.css'
 
 import Avatar from '@material-ui/core/Avatar'
 
-function NavBarItem({src, Icon, text}) {
+function NavBarItem({src, Icon, text, displayName}) {
     return (
-        <div className="NavBarItem">
+        <div className={text === "HamburgerMenu" ? "NavBarItem Mobile": "NavBarItem Desktop"}>
             {src && <Avatar src={src} alt={text}/>}
             {Icon && <Icon/>}
-            <span>{text}</span>
+            {text === 'Profile' && displayName && <span>{displayName}</span>}
+            <div className="NavBarItem__Tooltip">
+                {text}
+            </div>
         </div>
     )
 }

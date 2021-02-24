@@ -10,13 +10,17 @@
     "@testing-library/user-event": "^12.6.3",
     "bootstrap": "^4.6.0",
     "delay": "^5.0.0",
+    "firebase": "^8.2.9",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
+    "react-device-identifier": "^0.3.0",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "react-spring": "^8.0.27",
+    "react-timeago": "^5.2.0",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -42,5 +46,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.6.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.2",
+    "customize-cra": "^1.0.0",
+    "html-webpack-plugin": "^5.1.0",
+    "react-app-rewire-alias": "^1.0.0",
+    "react-app-rewired": "^2.1.8",
+    "style-loader": "^2.0.0",
+    "webpack-cli": "^4.5.0"
   }
 }
