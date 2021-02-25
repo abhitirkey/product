@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Homepage__Subcomponents.css'
+import './Homepage__Panels.css'
 
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -49,7 +49,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
 };
 
-export default function WritePost__DesktopPanel ({visibility, setVisibility}) {
+export default function WritePost__DesktopModalPanel ({visibility, setVisibility}) {
   const classes = useStyles();
 
   const handleOpen = () => {

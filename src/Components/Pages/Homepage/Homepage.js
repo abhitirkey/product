@@ -5,9 +5,9 @@ import DeviceIdentifier from 'react-device-identifier'
 
 import TopNavBar from 'Components/TopNavBar/TopNavBar'
 
-import ProfileSidebar from './SubComponents/ProfileSidebar'
-import WritePost from './SubComponents/WritePost'
-import PostsSection from './SubComponents/PostsSection'
+import ProfileSidebar from './Panels/ProfileSidebar'
+import WritePost from './Panels/WritePost'
+import PostsSection from './Panels/PostsSection'
 
 function Homepage() {
     return (

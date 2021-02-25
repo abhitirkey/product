@@ -1,5 +1,5 @@
 import React from 'react'
-import './Homepage__Subcomponents.css'
+import './Homepage__Panels.css'
 
 import ProfilePic from './images/profile_pic.jpg'
 

@@ -52,7 +52,7 @@
     padding: 0.5rem;
 }
 
-.postsColumn > .writePost > .MuiButtonBase-root {
+.postsColumn > .writePost > .formless > .MuiButtonBase-root {
     width: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -66,7 +66,7 @@
     -o-transition: transform 100ms ease-out;
 }
 
-.postsColumn > .writePost > .MuiButtonBase-root:hover {
+.postsColumn > .writePost > .formless > .MuiButtonBase-root:hover {
    color: rgba(0, 0, 0, 0.664);
    transform: scale(1.01);
    -webkit-transform: scale(1.01);
@@ -89,7 +89,50 @@
 .postsColumn .writePost__attachmentsGroup > .MuiButton-root:hover {
     background-color:  rgba(0, 0, 0, 0.034);
     color: rgba(0, 0, 0, 0.808);
-} 
+}
+
+.postsColumn .writePost__error {
+    text-align: center;
+    margin: 0.5rem auto;
+    color: rgb(151, 72, 72);
+}
+
+.postsColumn > .writePost .MuiSnackbar-anchorOriginTopCenter {
+    top: 100px;
+}
+
+
+
+.postsColumn > .writePost .uploadProgressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postsColumn > .writePost .uploadingText {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+.writePost > .WritePost__Desktop {
+    position: relative;
+}
+
+.WritePost__Desktop > .writePost__closeButton {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    color: gray;
+}
+
+.uploadProgressContainer > .ProgressPercentage {
+    flex-basis: 14%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e11f2f8e;
+}
+
 
 /* Posts section - write a Post ends here */
 

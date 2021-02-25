@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Homepage__Subcomponents.css'
+import './Homepage__Panels.css'
 
 import { makeStyles } from '@material-ui/core/styles';
 import {Avatar, Button} from '@material-ui/core'
@@ -19,8 +19,12 @@ const useStyles = makeStyles((theme) => ({
 function WritePost__Form() {
 
     const [{user}, dispatch] = useStateValue();
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState('');
     const ButtonClasses = useStyles();
+
+    const submitHandler = () => {
+        
+    }
 
     return (
         <>
@@ -33,9 +37,9 @@ function WritePost__Form() {
             </div>
             <textarea className="WPForm__TextField" value={input} placeholder="Write a Post" onChange={(e) => setInput(e.target.value)}></textarea>
             <div className={ButtonClasses.root+" WPMP__attachmentsGroup"}>
-                <Button><BsImage/>&nbsp;Image</Button>
-                <Button><BsCameraVideo/>&nbsp;Audio/Video</Button>
-                <Button><BsFileEarmarkPlus/>&nbsp;File</Button>
+                <Button component="label"><BsImage/>&nbsp;Image <input type="file" name="image" accept=".jpg, .jpeg, .png" hidden /></Button>
+                <Button component="label"><BsCameraVideo/>&nbsp;Audio/Video <input type="file" name="media" accept=".wav, .mp3, .mp4, .wmv, .avi" hidden /></Button>
+                <Button component="label"><BsFileEarmarkPlus/>&nbsp;File <input type="file" name="all" hidden /></Button>
             </div>
             <div className="WPForm__postButtonContainer">
                 <Button 
@@ -43,6 +47,7 @@ function WritePost__Form() {
                                 root: 'themeButton',
                                 label: 'whiteText'
                             }}
+                    onClick={submitHandler}
                 >Post</Button>
             </div>
         </>
