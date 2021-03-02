@@ -14,15 +14,6 @@
     height: 60%;
 }
 
-.TopNavBar > .avatarTopLeft {
-    width: 2rem;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
 .TopNavBar__searchBar {
     display: flex;
     background-color: rgb(238, 238, 238);
@@ -138,6 +129,10 @@
     }
 
     .bottomNavBar {
+        display: none;
+    }
+
+    .TopNavBar .Mobile {
         display: none;
     }
 }

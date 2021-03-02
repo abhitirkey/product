@@ -1,5 +1,4 @@
 import React from 'react'
-import './Login.css'
 
 import ToggleButton from '@material-ui/lab/ToggleButton'
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup'
@@ -16,7 +15,7 @@ import TextField from '@material-ui/core/TextField'
 import {MdVisibility, MdVisibilityOff} from 'react-icons/md'
 import { FormHelperText } from '@material-ui/core'
 
-import {useSpring, animated} from 'react-spring' // For animation of components
+import {animated} from 'react-spring' // For animation of components
 
 import {auth, provider} from 'Configs/Firebase'
 
@@ -40,8 +39,6 @@ function LoginForm(props) {
         .catch((error) => alert(error.message));
     }
 
-    const springProps = useSpring({opacity: 1, from: {opacity: 0}});
-
     const handleChange = prop => event => {
         props.setFields({ ...props.formFields, [prop]: event.target.value}); // This will take any field and update it
     }
@@ -59,7 +56,7 @@ function LoginForm(props) {
     }
 
     return (
-        <animated.form className="formFields" style={springProps}>
+        <animated.div className="formFields" style={props.style}>
                     <span className="lightText margin_top_bottom">Log in as</span>
                     <ToggleButtonGroup
                         value={props.formFields.role}
@@ -76,7 +73,7 @@ function LoginForm(props) {
                         <ToggleButton value='admin' aria-label="Admin">
                             Admin
                         </ToggleButton>
-                    </ToggleButtonGroup>
+                    </ToggleButtonGroup> 
                     <FormControl className="flex_item">
                         <InputLabel htmlFor="username">Username</InputLabel> 
                         <Input 
@@ -105,8 +102,8 @@ function LoginForm(props) {
                                 </InputAdornment>
                             }
                         />
-                        <FormHelperText id="forgot_password_helper_text"><span className="pinkText clickable" onClick={() => props.setFormType('forgot_password')}>Forgot Password?</span></FormHelperText> 
                     </FormControl>
+                    <FormHelperText id="forgot_password_helper_text"><span className="pinkText clickable" onClick={() => props.setFormType(1)}>Forgot Password?</span></FormHelperText>
                     <Button 
                         classes={{
                                     root: 'flex_item themeButton',
@@ -114,8 +111,8 @@ function LoginForm(props) {
                                 }}
                         onClick={signIn}
                     >Login</Button>
-                    {/* <button type="submit" className="themeButton fullWidth">Login</button> */}
-            </animated.form>
+                    <p>New? <span className="boldText clickable" onClick={() => props.setFormType(2)}>Sign Up</span> now!</p>
+            </animated.div>
     )
 }
 

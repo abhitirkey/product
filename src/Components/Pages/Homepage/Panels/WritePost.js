@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 
-import {useSpring} from 'react-spring'
+import {useSpring, useTransition, animated} from 'react-spring'
 
 import DeviceIdentifier from 'react-device-identifier'
 
 import './Homepage__Panels.css'
 
 import WritePostFormless from './SubComponents/WritePostFormless'
-import WritePost__MobilePanel from './WritePost__MobilePanel'
-import WritePost__Desktop from './WritePost__Desktop'
+import WritePost__MobilePanel from './SubComponents/WritePost__MobilePanel'
+import WritePost__Desktop from './SubComponents/WritePost__Desktop'
 
 
 function WritePost() {
@@ -20,13 +20,19 @@ function WritePost() {
         transform: formVisible ? 'translateX(0)': 'translateX(-100%)'
     });
 
+    const transition = useTransition(formVisible, null, {
+      from: {maxHeight: '10rem'},
+      enter: {maxHeight: '30rem'},
+      leave: {maxHeight: '10rem'}
+    })
+
     return (
       <>
         <div className="writePost">
-            {!formVisible && <WritePostFormless formVisible={formVisible} setFormVisibility={setFormVisibility}/> }  
-            <DeviceIdentifier isTablet={true} isDesktop={true}>
-              <WritePost__Desktop visibility={formVisible} setVisibility={setFormVisibility}/>
-            </DeviceIdentifier>
+              {!formVisible && <WritePostFormless formVisible={formVisible} setFormVisibility={setFormVisibility}/> }  
+              <DeviceIdentifier isTablet={true} isDesktop={true}>
+                <WritePost__Desktop visibility={formVisible} setVisibility={setFormVisibility}/>
+              </DeviceIdentifier>
         </div>
         <DeviceIdentifier isMobile={true}>
           <WritePost__MobilePanel style={contentProps} setVisibility={setFormVisibility}/>

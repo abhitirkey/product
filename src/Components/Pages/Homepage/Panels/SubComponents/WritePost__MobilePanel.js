@@ -1,5 +1,4 @@
 import React from 'react'
-import './Homepage__Panels.css'
 
 import WritePost__Form from './WritePost__Form'
 
@@ -9,7 +8,7 @@ import {Button, IconButton, Avatar} from '@material-ui/core'
 import {FaArrowLeft, FaUserFriends} from 'react-icons/fa'
 import {BsImage, BsCameraVideo, BsFileEarmarkPlus} from 'react-icons/bs'
 
-import ProfilePic from './images/profile_pic.jpg' 
+import ProfilePic from '../images/profile_pic.jpg' 
 
 function WritePost__MobilePanel({style, setVisibility}) {
 

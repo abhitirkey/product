@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {IconButton, Button} from '@material-ui/core'
 import {BsPen, BsImage, BsCameraVideo, BsFileEarmarkPlus} from 'react-icons/bs'
 
-import {animated, useSpring} from 'react-spring'
+import {animated, useTransition} from 'react-spring'
 
 import SnackbarFileError from './SnackbarFileError'
 import UploadProgressBar from './UploadProgressBar'
@@ -23,10 +23,11 @@ function WritePostFormless({formVisible, setFormVisibility}) {
     const [file, setFile] = useState(null);
     const [errorSnackBar, setErrorSnackBar] = useState(false);
 
-    const contentProps = useSpring({
-        opacity: !formVisible ? 1: 0,
-        transform: !formVisible ? 'translateY(0)': 'translateY(-100%)'
-    });
+    const transitions = useTransition(!formVisible, null, {
+      from: { opacity: 0, transform: 'scale(0.5) translateY(-50%)' },
+      enter: { opacity: 1, transform: 'scale(1) translateY(0)' },
+      leave: { opacity: 0, transform: 'scale(0.5) translateY(50%)' },
+      })
 
     const ButtonClasses = useStyles();
 
@@ -56,8 +57,9 @@ function WritePostFormless({formVisible, setFormVisibility}) {
         }
     }
 
-    return (
-        <animated.div className="formless" style={contentProps}>
+    return transitions.map(({ item, key, props }) =>
+    item && 
+      <animated.div key={key} style={props} className="WritePostFormless">
             <IconButton aria-label="write a post" onClick={() => setFormVisibility(true)}><BsPen/><span className="spaceLeft">Write a Post...</span><div className="flex_spacer"></div></IconButton>
             <div className={ButtonClasses.root+" writePost__attachmentsGroup"}>
                 <Button component="label"><BsImage/>&nbsp;Image <input type="file" name="image" accept=".jpg, .jpeg, .png" onChange={fileChangeHandler} hidden /></Button>
@@ -66,7 +68,7 @@ function WritePostFormless({formVisible, setFormVisibility}) {
             </div>
             <SnackbarFileError display={errorSnackBar} setDisplay={setErrorSnackBar}/>
               {file && <UploadProgressBar file={file} setFile={setFile}/>}
-        </animated.div>
+      </animated.div>
     )
 }
 

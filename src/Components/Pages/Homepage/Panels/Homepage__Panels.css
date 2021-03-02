@@ -48,11 +48,13 @@
 
 /* Posts section - write a Post starts here */
 
-.postsColumn > .writePost {
-    padding: 0.5rem;
+.WritePostFormless, .WritePost__Desktop {
+    background-color: white;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 7px 2px #00000033;
 }
 
-.postsColumn > .writePost > .formless > .MuiButtonBase-root {
+.postsColumn > .writePost > .WritePostFormless > .MuiButtonBase-root {
     width: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -64,15 +66,20 @@
     -moz-transition: transform 100ms ease-out;
     -ms-transition: transform 100ms ease-out;
     -o-transition: transform 100ms ease-out;
+    color: gray;
 }
 
-.postsColumn > .writePost > .formless > .MuiButtonBase-root:hover {
+.postsColumn > .writePost > .WritePostFormless > .MuiButtonBase-root:hover {
    color: rgba(0, 0, 0, 0.664);
    transform: scale(1.01);
    -webkit-transform: scale(1.01);
    -moz-transform: scale(1.01);
    -ms-transform: scale(1.01);
    -o-transform: scale(1.01);
+}
+
+.WritePostFormless .MuiIconButton-label {
+    color: gray;
 }
 
 .postsColumn .writePost__attachmentsGroup {
@@ -103,7 +110,7 @@
 
 
 
-.postsColumn > .writePost .uploadProgressContainer {
+.uploadProgressContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,16 +169,27 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    position: relative;
 }
 
-.PostsSection__post > .post__topSection > img {
-    width: 65px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    margin-right: 10px;
+.PostsSection__post > .post__topSection > .MuiAvatar-root {
+    margin-right:1rem;
+}
+
+.post__topSection > .post__options {
+    /*Thisisthedropdownlistatthetopright*/
+    position: absolute;
+    top: 3.2rem;
+    right: 1rem;
+    width: 120px;
+    z-index: 100;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 4px 6px 8px 0px #00000017;
 }
 
 .PostsSection__post .post__personalDetails > p{
@@ -239,7 +257,6 @@
 .WritePost__MobilePanel {
     position: absolute;
     top: 5rem;
-    height: 79%;
     width: 100%;
     background-color: white;
     z-index: 100;
@@ -297,6 +314,7 @@
     height: 12rem;
     padding: 1rem;
     border-bottom: 1px solid var(--lightGray);
+    margin-bottom: -0.6rem;
 }
 
 .WPForm__attachmentsGroup {
@@ -305,6 +323,29 @@
     align-items: center;
     border-bottom: 1px solid var(--lightGray);
     height: 4rem;
+}
+
+.WPForm__FilePreviewContainer {
+    position: relative;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+    width: 100%;
+    color: white;
+}
+
+.WPForm__FilePreviewContainer > img{
+   width: 100%;
+}
+
+.WPForm__FilePreviewContainer > .FilePreview__closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.WPForm__FilePreviewContainer > .FilePreview__closeButton:hover {
+    background-color: rgba(0, 0, 0, 0.788);
 }
 
 .WPForm__postButtonContainer {

@@ -36,23 +36,25 @@ function CircularProgressWithLabel(props) {
     value: PropTypes.number.isRequired
   };
 
-function UploadProgressBar({ file, setFile }) {
+function UploadProgressBar({ file, setFile, text = null, clearForm}) {
 
-    const {url, progress} = useStorage(file);
+    const {url, progress} = useStorage(file, text);
     console.log(progress, url)
 
     useEffect(() => {
-      if(url)
+      if(url){
         setFile(null)
+        if(clearForm)
+          clearForm();
+      }
+        
     }, [url])
 
     return (
-        <>
-        <div className="uploadProgressContainer">
-            <div className="uploadingText smallText fadeInAndOut">Uploading...</div>
-            <div className="ProgressPercentage"><CircularProgressWithLabel value={Math.floor(progress)} /></div>
-        </div>
-        </>
+          <div className="uploadProgressContainer">
+              <div className="uploadingText smallText fadeInAndOut">Uploading file...</div>
+              <div className="ProgressPercentage"><CircularProgressWithLabel value={Math.floor(progress)} /></div>
+          </div>
         
     )
 }

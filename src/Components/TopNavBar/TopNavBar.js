@@ -9,7 +9,6 @@ import {SiHtmlacademy} from 'react-icons/si'
 import {GiHamburgerMenu} from 'react-icons/gi'
 
 import tyuteeLogo from './tyuteeNavBarLogo.png'
-import ProfilePic from './profile_pic.jpg'
 
 import NavBarItem from './NavBarItem'
 import BottomNavBarItem from './BottomNavBarItem'
@@ -31,7 +30,7 @@ function TopNavBar() {
     return (
         <>
         <nav className="TopNavBar">
-            <img src={ProfilePic} className="avatarTopLeft mobileOnly__flex"/>
+            <Avatar src={user.photoURL} className="avatarTopLeft Mobile"/>
             <img src={tyuteeLogo} alt="tyutee Logo" className="tyuteeLogo desktopOnly"/>
             <div className="TopNavBar__searchBar">
                 <input type="text" value="" />
